@@ -7,6 +7,5 @@ import org.springframework.boot.runApplication
 class ReactiveShopApplication
 
 fun main(args: Array<String>) {
-	println("Hello world")
 	runApplication<ReactiveShopApplication>(*args)
 }

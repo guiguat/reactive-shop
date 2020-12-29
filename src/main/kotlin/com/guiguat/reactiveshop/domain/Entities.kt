@@ -1,4 +1,4 @@
-package com.guiguat.reactiveshop.domain.model
+package com.guiguat.reactiveshop.domain
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
@@ -14,4 +14,5 @@ import java.util.*
 @Document data class OrderStatus (
     @Id val id: String,
     val orderId: String,
-    val status: OrderStatusCode = OrderStatusCode.CONFIRMATION)
+    val status: OrderStatusCode = OrderStatusCode.CONFIRMATION
+)
