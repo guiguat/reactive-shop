@@ -1,6 +1,6 @@
 package com.guiguat.reactiveshop.application.repositories
 
 import com.guiguat.reactiveshop.domain.OrderStatus
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository
+import org.springframework.data.repository.kotlin.CoroutineCrudRepository
 
-interface OrderStatusRepository : ReactiveMongoRepository<OrderStatus, String>
+interface OrderStatusRepository : CoroutineCrudRepository<OrderStatus, String>
