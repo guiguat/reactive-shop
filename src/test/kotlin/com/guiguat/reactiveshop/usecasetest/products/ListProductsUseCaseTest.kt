@@ -1,7 +1,7 @@
 package com.guiguat.reactiveshop.usecasetest.products
 
 import com.guiguat.reactiveshop.application.repositories.ProductRepository
-import com.guiguat.reactiveshop.application.usecase.ListProductsUseCase
+import com.guiguat.reactiveshop.application.usecase.products.ListProductsUseCase
 import com.guiguat.reactiveshop.domain.Product
 import com.guiguat.reactiveshop.util.mock
 import kotlinx.coroutines.flow.flowOf

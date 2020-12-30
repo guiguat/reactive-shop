@@ -1,4 +1,4 @@
-package com.guiguat.reactiveshop.application.usecase
+package com.guiguat.reactiveshop.application.usecase.products
 
 import com.guiguat.reactiveshop.application.repositories.ProductRepository
 import com.guiguat.reactiveshop.domain.Product
