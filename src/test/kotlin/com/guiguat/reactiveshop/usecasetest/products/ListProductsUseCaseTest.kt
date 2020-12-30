@@ -1,4 +1,4 @@
-package com.guiguat.reactiveshop.usecasetest
+package com.guiguat.reactiveshop.usecasetest.products
 
 import com.guiguat.reactiveshop.application.repositories.ProductRepository
 import com.guiguat.reactiveshop.application.usecase.ListProductsUseCase
@@ -16,14 +16,12 @@ import java.math.BigDecimal
 class ListProductsUseCaseTest {
     private val repository = mock<ProductRepository>()
     @BeforeAll fun setup(){
-        val product = Product(id=null, name="Hamburger", price= BigDecimal("24.99"),
+        val product = Product(null, name="Hamburger", price= BigDecimal("24.99"),
             imgUrl="https://exame.com/wp-content/uploads/2020/05/mafe-studio-LV2p9Utbkbw-unsplash-1.jpg")
         Mockito.`when`(repository.findAll()).thenReturn(Flux.just(product))
     }
     @Test fun `test listAll products`(){
-        val listProducts = ListProductsUseCase(repository)
-
-        listProducts.execute()
+        ListProductsUseCase(repository).execute()
         Mockito.verify(repository, times(1)).findAll()
     }
 }
