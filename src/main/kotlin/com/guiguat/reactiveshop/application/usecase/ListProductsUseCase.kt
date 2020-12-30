@@ -4,10 +4,9 @@ import com.guiguat.reactiveshop.application.repositories.ProductRepository
 import com.guiguat.reactiveshop.domain.Product
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import reactor.core.publisher.Flux
 
 @Service
-class ListProductsUseCase @Autowired constructor(private val repo: ProductRepository) {
-    fun execute(): List<Product>{
-        return repo.findAll()
-    }
+class ListProductsUseCase @Autowired constructor(private val repository: ProductRepository){
+    fun execute(): Flux<Product> = repository.findAll()
 }
