@@ -11,6 +11,6 @@ import org.springframework.stereotype.Service
 class OrderStatusService @Autowired constructor(
     private val statusRepo: OrderStatusRepository, private val orderRepo: OrderRepository){
     fun update(oid: String, status: OrderStatusCode) = orderRepo.findById(oid)
-        .flatMap { statusRepo.save(OrderStatus(oid, status))}
+        .map { statusRepo.save(OrderStatus(oid, status))}
     fun findById(oid: String) = statusRepo.findById(oid)
 }
