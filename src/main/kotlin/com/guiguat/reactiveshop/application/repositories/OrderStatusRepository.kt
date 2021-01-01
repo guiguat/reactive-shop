@@ -1,8 +1,6 @@
 package com.guiguat.reactiveshop.application.repositories
 
 import com.guiguat.reactiveshop.domain.OrderStatus
-import org.springframework.data.repository.kotlin.CoroutineCrudRepository
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository
 
-interface OrderStatusRepository : CoroutineCrudRepository<OrderStatus, String> {
-    suspend fun findByOrderId(orderId: String): OrderStatus?
-}
+interface OrderStatusRepository : ReactiveMongoRepository<OrderStatus, String>
